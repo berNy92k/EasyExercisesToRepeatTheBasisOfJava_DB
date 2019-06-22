@@ -1,0 +1,32 @@
+----------------------------
+
+1) Fizz-buzz
+2) Validation of the PESEL
+3) Calculation of Factorial
+4) Reversing a text string (Pociąg -> gąicoP)
+5) Collatz's problem
+6) Count the words in the text (text from the .txt file)
+7) Checking anagrams and palindromes
+8) Count the days between two dates
+9) Draw a Christmas tree (in the console)
+10) Simple text encryption / decryption
+11) Stone paper shears (or in the extended version: rock paper scissors, lizard spock)
+12) Checking the divisibility of a given number (writing out its allocators)
+
+----------------------------
+
+1) Fizz-Buzz
+2) Walidacja PESELU
+3) Obliczanie silni
+4) Odwracanie ciągu tekstowego (Pociąg -> gąicoP)
+5) Problem Collatza
+6) Policz słowa w tekście (tekst z pliku .txt)
+7) Sprawdzanie anagramów i palindromów
+8) Policz dni między dwoma datami
+9) Narysuj choinkę (w konsoli)
+10) Proste szyfrowanie / odszyfrowywanie tekstu
+11) Papier kamień nożyce (lub w wersji rozszerzonej: rock paper scissors lizard spock )
+12) Sprawdzanie podzielności danej liczby (wypisanie jej podzielników)
+
+----------------------------
+
