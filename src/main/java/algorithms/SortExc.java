@@ -11,17 +11,100 @@ public class SortExc {
         sortExc.fillIntArray();
         sortExc.printArray(arraySize);
 
-        sortExc.linearSearch(13);
-//        sortExc.bubbleSort();
-//        sortExc.binarySearchForValue(13);
+//        sortExc.linearSearch(13);
+        sortExc.bubbleSort();
+        sortExc.binarySearchForValue(13);
 //        sortExc.selectionSort(13);
     }
 
-    private void linearSearch(int value) {
+    private void binarySearchForValue(int value) {
+        int indexA = 0;
+        int indexB = arraySize - 1;
+        int indexMid = -1;
 
+        while (indexA <= indexB) {
+            indexMid = (indexA + indexB) / 2;
+            if (intArray[indexMid] < value) {
+                indexB = indexMid - 1;
+            } else if (intArray[indexMid] > value) {
+                indexA = indexMid + 1;
+            } else if (indexA == indexB) {
+                indexMid = -1;
+                break;
+            } else {
+                break;
+            }
+        }
+
+        if (indexMid > 0 && intArray[indexMid] == value) {
+            printStarUnderIndex(String.valueOf(indexMid));
+        } else {
+            System.out.println("Value not found");
+        }
+    }
+
+    private void bubbleSort() {
+        for (int i = arraySize - 1; i >= 0; i--) {
+            for (int j = i; j < arraySize - 1; j++) {
+                if (intArray[j] < intArray[j + 1]) {
+                    int tmpValue = intArray[j];
+                    intArray[j] = intArray[j + 1];
+                    intArray[j + 1] = tmpValue;
+                }
+            }
+        }
+        printArray(arraySize);
+    }
+
+    private void linearSearch(int value) {
+        StringBuilder index = new StringBuilder();
+        for (int i = 0; i < arraySize; i++) {
+            if (intArray[i] == value && index.toString().equals("")) {
+                index.append(i);
+            } else if (intArray[i] == value && !index.toString().equals("")) {
+                index.append(",").append(i);
+            }
+        }
+
+        if (index.toString().equals("")) {
+            System.out.println("Value not found");
+        } else {
+            printStarUnderIndex(index.toString());
+        }
+    }
+
+    private void printStarUnderIndex(String index) {
+        String[] splitArray = index.split(",");
+
+        for (int i = 0; i < arraySize; i++) {
+            if (checkIfContainIndex(splitArray, i)) {
+                System.out.print("| " + "*" + "  ");
+            } else {
+                System.out.print("| " + " " + "  ");
+            }
+
+            if (i == arraySize - 1) {
+                System.out.println("| - star (found value)");
+            }
+        }
+        System.out.println("---------------------------------------------------");
+    }
+
+    private boolean checkIfContainIndex(String[] splitArray, int i) {
+        boolean isContain = false;
+
+        for (String singleValue : splitArray) {
+            if (Integer.parseInt(singleValue) == i) {
+                isContain = true;
+                break;
+            }
+        }
+
+        return isContain;
     }
 
     private void printArray(int arraySize) {
+        System.out.println();
         System.out.println("---------------------------------------------------");
         for (int i = 0; i < arraySize; i++) {
             System.out.print("| " + i + "  ");
