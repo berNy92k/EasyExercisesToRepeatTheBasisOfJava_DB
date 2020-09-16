@@ -12,9 +12,30 @@ public class SortExc {
         sortExc.printArray(arraySize);
 
 //        sortExc.linearSearch(13);
-        sortExc.bubbleSort();
-        sortExc.binarySearchForValue(13);
-//        sortExc.selectionSort(13);
+//        sortExc.bubbleSort();
+//        sortExc.binarySearchForValue(13);
+//        sortExc.selectionSort();
+        sortExc.insertionSort();
+    }
+
+    private void insertionSort() {
+
+    }
+
+    private void selectionSort() {
+        for (int i = 0; i < arraySize; i++) {
+            int minValue = i;
+            for (int j = i; j < arraySize; j++) {
+                if (intArray[minValue] > intArray[j]) {
+                    minValue = j;
+                }
+            }
+            int i2 = intArray[minValue];
+            intArray[minValue] = intArray[i];
+            intArray[i] = i2;
+        }
+
+        printArray(arraySize);
     }
 
     private void binarySearchForValue(int value) {
