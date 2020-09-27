@@ -19,7 +19,17 @@ public class SortExc {
     }
 
     private void insertionSort() {
+        for (int i = 0; i < arraySize; i++) {
+            int value = intArray[i];
+            for (int j = i - 1; j >= 0; j--) {
+                if (intArray[j] > value) {
+                    intArray[j + 1] = intArray[j];
+                    intArray[j] = value;
+                }
+            }
+        }
 
+        printArray(arraySize);
     }
 
     private void selectionSort() {
